@@ -5,7 +5,7 @@ import { LoginPage } from './page-objects/LoginPage';
   test.beforeEach(async ({ page }) => {
     const loginPage = new LoginPage(page);
     await loginPage.goto();
-    await loginPage.login("standard_user", process.env.PASSWORD!);
+    await loginPage.login(process.env.USER_NAME!, process.env.PASSWORD!);
   });
 
   test('add to cart test case', async ({ page }) => {

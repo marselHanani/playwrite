@@ -26,6 +26,6 @@ test('login with empty username and password', async ({ page }) => {
 test('successful login redirects to inventory', async ({ page }) => {
   const loginPage = new LoginPage(page);
   await loginPage.goto();
-  await loginPage.login("standard_user", process.env.PASSWORD!);
+  await loginPage.login(process.env.USER_NAME!, process.env.PASSWORD!);
   await expect(page).toHaveURL(/inventory/);
 });
